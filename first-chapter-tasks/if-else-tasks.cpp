@@ -15,6 +15,22 @@ int main() {
     //cout << endl << mult;
     cout << endl << (x > y ? x * x : 100);
 
+    /*
+    if( (x >= 0 && x <= 1) && (y >= -1 && y <= 0) ) {
+        cout << endl << "Yes";
+    }
+    else {
+        cout << endl << "No";
+    } 
+    */
+    
+    if( y <= -x && x >= 0 && y >= -1)
+        cout << endl << "Yes";
+    else    
+        cout << endl << "No";
+
+
+
     getch();
     return 0;
 }
