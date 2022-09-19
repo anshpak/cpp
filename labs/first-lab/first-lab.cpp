@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "house.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    House h;
+    h.Show();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
