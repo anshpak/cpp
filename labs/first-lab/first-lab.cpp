@@ -6,8 +6,8 @@
 
 int main()
 {
-    House h;
-    h.Show();
+    House h = House("Armeyskaya/21", 4, 3, 50);
+    h.show();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
