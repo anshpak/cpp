@@ -7,7 +7,11 @@
 int main()
 {
     House h = House("Armeyskaya/21", 4, 3, 50);
-    h.show();
+    cout << h.get_address() << endl;
+    cout << h.get_fl_num() << endl;
+    cout << h.get_rooms_amount() << endl;
+    cout << h.get_area() << endl;
+    //h.show();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

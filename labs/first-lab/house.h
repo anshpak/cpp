@@ -25,9 +25,9 @@ public:
 	void set_fl_num(int my_fl_num);
 	void set_rooms_amount(int my_rooms_amount);
 	void set_area(int my_area);
-	string get_address(string my_address);
-	int get_fl_num(int my_fl_num);
-	int get_rooms_amount(int my_rooms_amount);
-	int get_area(int my_area);
+	string get_address();
+	int get_fl_num();
+	int get_rooms_amount();
+	int get_area();
 };
 #endif
