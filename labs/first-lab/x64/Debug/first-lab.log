@@ -1,4 +1,3 @@
 ﻿  first-lab.cpp
-  house.cpp
-  Создание кода...
+D:\cpp-tasks\labs\first-lab\first-lab.cpp(11,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   first-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\first-lab.exe

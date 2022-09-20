@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+House::House() {
+	address = "";
+	fl_num = 0;
+	fl.rooms_amount = 0;
+	fl.area = 0;
+}
+
 House::House(string my_address, int my_fl_num, int my_rooms_amount, int my_area) {
 	set_address(my_address);
 	set_fl_num(my_fl_num);
@@ -10,10 +17,11 @@ House::House(string my_address, int my_fl_num, int my_rooms_amount, int my_area)
 }
 
 void House:: show() {
+	cout << "________________________________________" << endl;
 	cout << "The address is " << address << ";" << endl;
-	cout << "The house floor is " << fl_num << ";" << endl;
+	cout << "The current floor is " << fl_num << ";" << endl;
 	cout << "There are " << fl.rooms_amount << " rooms;" << endl;
-	cout << "The floor area is about " << fl.area << " square meters;";
+	cout << "The floor area is about " << fl.area << " square meters;" << endl;
 }
 
 void House::set_address(string my_address) {

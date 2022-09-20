@@ -3,15 +3,29 @@
 
 #include <iostream>
 #include "house.h"
+#include <string>
+#include <ctime>
 
 int main()
 {
-    House h = House("Armeyskaya/21", 4, 3, 50);
+    srand(time(NULL));
+    const int house_flats_amount = 10;
+    const string house_address = "Oktyabrskaya/" + (to_string(rand() % 9 + 1) + "/");
+    House flats[house_flats_amount];
+    for (int i = 0; i < house_flats_amount; i++) {
+        flats[i] = House(house_address + to_string(i + 1), i + 1, rand() % 10 + 1, rand() % 100 + 20);
+    }
+    for (int i = 0; i < house_flats_amount; i++) {
+        // cout << i << endl;
+        flats[i].show();
+    }
+    /*House h = House("Armeyskaya/21", 4, 3, 50);
     cout << h.get_address() << endl;
     cout << h.get_fl_num() << endl;
     cout << h.get_rooms_amount() << endl;
     cout << h.get_area() << endl;
-    //h.show();
+    h.show();
+    */
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

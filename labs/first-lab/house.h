@@ -19,6 +19,7 @@ class House {
 	int fl_num;
 	stage fl;
 public:
+	House();
 	House(string my_address, int my_fl_num, int my_rooms_amount, int my_area);
 	void show();
 	void set_address(string my_address);
