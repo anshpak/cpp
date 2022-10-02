@@ -11,12 +11,16 @@ using namespace std;
 const X = 10;
 const n = 3;
 const vector_size = 5;
+tset int[n] = { 0, 1, X };
 
 class Tvector {
-	tset int[n] = {0, 1, X};
-
+	values int[vector_size];
+	string name;
 	public:
 		Tvector();
+		void set_values();
+		void set_name();
+		void show_vector();
 };
 
 //struct stage {
