@@ -4,23 +4,23 @@
 #define TVECTOR_H // заголовочного файла
 #include <iostream>
 #include <string.h>
+
 using namespace std;
 /* #ifndef и #endif - директивы препроцессора, которые предотвращают многократное включение кода, расположенного между ними.
 Если загловок еще не включался в файл, то имя HOUSE-HEADER_H определяется директивой #define.
 */
-const X = 10;
-const n = 3;
-const vector_size = 5;
-tset int[n] = { 0, 1, X };
+const int X = 10;
+const int n = 3;
+const int vector_size = 5;
 
 class Tvector {
-	values int[vector_size];
+	int values[vector_size];
 	string name;
-	public:
-		Tvector();
-		void set_values();
-		void set_name();
-		void show_vector();
+public:
+	Tvector();
+	void set_values();
+	void set_name();
+	void show_vector();
 };
 
 //struct stage {

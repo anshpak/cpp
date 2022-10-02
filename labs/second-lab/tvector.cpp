@@ -3,7 +3,10 @@
 #include <ctime>
 using namespace std;
 
+int tset[n] = { 0, 1, X };
+
 Tvector::Tvector() {
+	set_name();
 	set_values();
 }
 
