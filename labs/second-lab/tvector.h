@@ -7,7 +7,7 @@
 
 using namespace std;
 /* #ifndef и #endif - директивы препроцессора, которые предотвращают многократное включение кода, расположенного между ними.
-Если загловок еще не включался в файл, то имя HOUSE-HEADER_H определяется директивой #define.
+Если загловок еще не включался в файл, то имя TVECTOR-HEADER_H определяется директивой #define.
 */
 const int X = 10;
 const int n = 3;
@@ -19,7 +19,9 @@ class Tvector {
 public:
 	Tvector();
 	void set_values();
-	void set_name();
+	void set_name(string name = "Unnamed vector");
+	//int* get_values();
+	string get_name();
 	void show_vector();
 };
 

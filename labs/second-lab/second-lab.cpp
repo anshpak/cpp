@@ -8,6 +8,11 @@
 int main() {
 	Tvector a;
 	a.show_vector();
+	/*int *temp_arr = a.get_values();
+	for (int i = 0; i < vector_size; i++) {
+		cout << *(temp_arr + i) << " ";
+	}
+	temp_arr[0] = 123;*/
 }
 
 //int main()

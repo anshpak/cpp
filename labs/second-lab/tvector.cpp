@@ -17,8 +17,21 @@ void Tvector::set_values() {
 	}
 }
 
-void Tvector::set_name() {
-	name = "Unnamed vector";
+void Tvector::set_name(string name) {
+	this->name = name;
+}
+
+//int* Tvector::get_values() {
+//	int values_copy[vector_size];
+//	for (int i = 0; i < vector_size; i++) {
+//		cout << values[i] << "\n";
+//		values_copy[i] = values[i];
+//	}
+//	return values_copy;
+//}
+
+string Tvector::get_name() {
+	return name;
 }
 
 void Tvector::show_vector() {
