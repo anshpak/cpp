@@ -31,4 +31,9 @@ public:
 	int get_rooms_amount();
 	int get_area();
 };
+
+void show_stages_with_N_rooms(House flats[], const int N, int my_rooms_amount);
+void show_stages_with_N_rooms_from_inter(House flats[], const int a, const int b, int my_rooms_amount);
+void show_stages_with_area_more_than(House flats[], const int N, int my_area);
+
 #endif

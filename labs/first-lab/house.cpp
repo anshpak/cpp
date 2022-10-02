@@ -56,3 +56,47 @@ int House::get_area() {
 	return fl.area;
 }
 
+void show_stages_with_N_rooms(House flats[], const int N, int my_rooms_amount) {
+	int temp;
+	bool flag = false;
+	for (int i = 1; i < N; i++) {
+		temp = flats[i].get_rooms_amount();
+		if (temp == my_rooms_amount) {
+			cout << flats[i].get_address() << endl;
+			flag = true;
+		}
+	}
+	if (!flag){
+		cout << "None" << endl;
+	}
+}
+
+void show_stages_with_N_rooms_from_inter(House flats[], const int a, const int b, int my_rooms_amount) {
+	int temp;
+	bool flag = false;
+	for (int i = a - 1; i < b; i++) {
+		temp = flats[i].get_rooms_amount();
+		if (temp == my_rooms_amount) {
+			cout << flats[i].get_address() << endl;
+			flag = true;
+		}
+	}
+	if (!flag) {
+		cout << "None" << endl;
+	}
+}
+
+void show_stages_with_area_more_than(House flats[], const int N, int my_area) {
+	int temp;
+	bool flag = false;
+	for (int i = 0; i < N; i++) {
+		temp = flats[i].get_area();
+		if (temp > my_area) {
+			cout << flats[i].get_address() << endl;
+			flag = true;
+		}
+	}
+	if (!flag) {
+		cout << "None" << endl;
+	}
+}
