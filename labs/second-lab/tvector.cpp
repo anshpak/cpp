@@ -134,6 +134,7 @@ void show_menu() {
 	cout << "1 - to output all vectors;\n";
 	cout << "2 - to compare two random vectors;\n";
 	cout << "3 - to check if two random vectors are orthogonal;\n";
+	cout << "4 - to show the intersection of two random non orthogonal vectors;\n";
 	cout << "q - to quit.\n";
 }
 

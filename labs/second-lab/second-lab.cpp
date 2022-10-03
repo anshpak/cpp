@@ -79,6 +79,23 @@ int main() {
 			cin >> ch;
 			break;
 		}
+		case '4': {
+			system("cls");
+			cout << "Show the intersection of two random non orthogonal vectors: \n";
+			int j = rand() % ARR_OF_VECTORS_SIZE;
+			int k = rand() % ARR_OF_VECTORS_SIZE;
+			while (!(vectors[j] * vectors[k])) {
+				int j = rand() % ARR_OF_VECTORS_SIZE;
+				int k = rand() % ARR_OF_VECTORS_SIZE;
+			}
+			cout << "1. " << vectors[j];
+			cout << "2. " << vectors[k];
+			cout << "The intersection looks like that:\n";
+			vectors[j] / vectors[k];
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
 		default:
 			break;
 		}
