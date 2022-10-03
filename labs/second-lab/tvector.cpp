@@ -5,8 +5,8 @@ using namespace std;
 
 int tset[n] = { 0, 1, X };
 
-Tvector::Tvector() {
-	set_name();
+Tvector::Tvector(string name) {
+	set_name(name);
 	set_random_values();
 }
 

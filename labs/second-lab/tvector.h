@@ -17,11 +17,11 @@ class Tvector {
 	int values[vector_size];
 	string name;
 public:
-	Tvector();
+	Tvector(string name = "Unnamed vector");
 	Tvector(string name, int values[]);
 	void set_values(int values[]);
 	void set_random_values();
-	void set_name(string name = "Unnamed vector");
+	void set_name(string name);
 	void get_values(int arr_for_values_copy[]);
 	string get_name();
 	void show_vector();
