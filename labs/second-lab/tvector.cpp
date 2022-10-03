@@ -1,6 +1,7 @@
 #include "tvector.h"
 #include <iostream>
 #include <ctime>
+#include <string>
 using namespace std;
 
 int tset[n] = { 0, 1, X };
@@ -120,12 +121,30 @@ bool operator*(const Tvector& left_vector, const Tvector& right_vector) {
 	return true;
 }
 
+string operator/(const Tvector& left_vector, const Tvector& right_vector) {
+	string res = "{ ";
+	for (int i = 0; i < vector_size; i++) {
+		if (left_vector.values[i] == 1 && right_vector.values[i] == 1 || left_vector.values[i] == X && right_vector.values[i] == 1 || left_vector.values[i] == 1 && right_vector.values[i] == X) {
+			res += "1 ";
+		}
+		else if (left_vector.values[i] == X && right_vector.values[i] == X) {
+			res += to_string(X);
+			res += " ";
+		}
+		else {
+			res += "0 ";
+		}
+	}
+	res += "}\n";
+	return res;
+}
+
 ostream& operator<<(ostream& os, const Tvector& vector) {
 	os << vector.name << " = { ";
 	for (int i = 0; i < vector_size; i++) {
 		os << vector.values[i] << " ";
 	}
-	os << "}\n";
+	os << "}";
 	return os;
 }
 
@@ -135,6 +154,7 @@ void show_menu() {
 	cout << "2 - to compare two random vectors;\n";
 	cout << "3 - to check if two random vectors are orthogonal;\n";
 	cout << "4 - to show the intersection of two random non orthogonal vectors;\n";
+	cout << "5 - to show how many times " << X << " appears in random vector;\n";
 	cout << "q - to quit.\n";
 }
 
