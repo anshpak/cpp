@@ -102,6 +102,13 @@ void show_vectors_intersection(Tvector v1, Tvector v2) {
 	cout << "\n";
 }
 
+void show_menu() {
+	cout << "Press:\n"; 
+	cout << "1 - to output all vectors;\n";
+
+	cout << "q - to quit.\n";
+}
+
 //house::house() {
 //	address = "";
 //	fl_num = 0;

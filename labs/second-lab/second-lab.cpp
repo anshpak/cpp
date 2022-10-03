@@ -4,15 +4,22 @@
 #include <iostream>
 #include "tvector.h"
 #include <string>
+#include <stdlib.h>
 
 int main() {
 	int a_values[vector_size] = { 1, 0, 1, X, X };
 	int b_values[vector_size] = { 0, 0, X, 1, 1 };
 	Tvector a = Tvector("a", a_values);
 	Tvector b = Tvector("b", b_values);
-	a.show_vector();
+	/*a.show_vector();
 	b.show_vector();
-	show_vectors_intersection(a, b);
+	show_vectors_intersection(a, b);*/
+	char ch = NULL;
+	while (ch != 'q') {
+		system("cls");
+		show_menu();
+		cin >> ch;
+	}
 }
 
 //int main()
