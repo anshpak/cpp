@@ -9,7 +9,7 @@ using namespace std;
 /* #ifndef и #endif - директивы препроцессора, которые предотвращают многократное включение кода, расположенного между ними.
 Если загловок еще не включался в файл, то имя TVECTOR-HEADER_H определяется директивой #define.
 */
-const int X = 10;
+const int X = 9;
 const int n = 3;
 const int vector_size = 5;
 

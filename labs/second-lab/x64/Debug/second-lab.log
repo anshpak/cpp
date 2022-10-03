@@ -1,6 +1,3 @@
 ﻿  second-lab.cpp
-  tvector.cpp
-D:\cpp-tasks\labs\second-lab\tvector.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Создание кода...
-LINK : warning LNK4076: недопустимый файл инкрементного состояния "x64\Debug\second-lab.ilk" (будет удален); неинкрементная компоновка
+D:\cpp-tasks\labs\second-lab\second-lab.cpp(13,6): warning C4101: temp_arr: неиспользованная локальная переменная
   second-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\second-lab.exe

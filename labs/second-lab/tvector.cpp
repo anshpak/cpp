@@ -31,18 +31,24 @@ string Tvector::get_name() {
 	return name;
 }
 
-//bool are_orthogonal(Tvector v1, Tvector v2) {
-//	for (int i = 0; i < vector_size; i++) {
-//		if (v1.)
-//	}
-//}
-
 void Tvector::show_vector() {
 	cout << name << " = { ";
 	for (int i = 0; i < vector_size; i++) {
 		cout << values[i] << " ";
 	}
-	cout << "}";
+	cout << "}\n";
+}
+
+bool are_orthogonal(Tvector v1, Tvector v2) {
+	int v1_values[vector_size], v2_values[vector_size];
+	v1.get_values(v1_values);
+	v2.get_values(v2_values);
+	for (int i = 0; i < vector_size; i++) {
+		if (v1_values[i] == 1 && v2_values[i] == 1 || v1_values[i] == X && v2_values[i] == X || v1_values[i] == X && v2_values[i] == 1 || v1_values[i] == 1 && v2_values[i] == X) {
+			return false;
+		}
+	}
+	return true;
 }
 
 //house::house() {
