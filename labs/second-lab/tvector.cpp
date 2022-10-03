@@ -123,7 +123,8 @@ ostream& operator<<(ostream& os, const Tvector& vector) {
 void show_menu() {
 	cout << "Press:\n"; 
 	cout << "1 - to output all vectors;\n";
-	cout << "2 - compare two random vectors;\n";
+	cout << "2 - to compare two random vectors;\n";
+	cout << "3 - to check if two random vectors are orthogonal;\n";
 	cout << "q - to quit.\n";
 }
 

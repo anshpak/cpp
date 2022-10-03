@@ -61,7 +61,20 @@ int main() {
 			cout << "1. " << vectors[j];
 			cout << "2. " << vectors[k];
 			bool check = vectors[j] == vectors[k];
-			cout << "Are these vectors equal?\n The answer is" << std::boolalpha << check << "\n";
+			cout << "Are these two vectors equal?\n The answer is" << std::boolalpha << check << "\n";
+			cout << "Press any key or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '3': {
+			system("cls");
+			cout << "Check if two random vectors are orthogonal: \n";
+			int j = rand() % 10;
+			int k = rand() % 10;
+			cout << "1. " << vectors[j];
+			cout << "2. " << vectors[k];
+			bool check = vectors[j] * vectors[k];
+			cout << "Are these two vectors orthogonal?\n The answer is" << std::boolalpha << check << "\n";
 			cout << "Press any key or q to leave.\n";
 			cin >> ch;
 			break;
