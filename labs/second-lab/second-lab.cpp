@@ -10,11 +10,7 @@ int main() {
 	a.show_vector();
 	Tvector b;
 	b.show_vector();
-	bool check = are_orthogonal(a, b);
-	cout << std::boolalpha << check;
-	cout << "_________________\n";
-	check = are_equal(a, b);
-	cout << std::boolalpha << check;
+	show_vectors_intersection(a, b);
 }
 
 //int main()

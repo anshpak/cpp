@@ -73,6 +73,24 @@ bool are_equal(Tvector v1, Tvector v2) {
 	return true;
 }
 
+void show_vectors_intersection(Tvector v1, Tvector v2) {
+	int v1_values[vector_size], v2_values[vector_size];
+	v1.get_values(v1_values);
+	v2.get_values(v2_values);
+	for (int i = 0; i < vector_size; i++) {
+		if (v1_values[i] == 1 && v2_values[i] == 1 || v1_values[i] == X && v2_values[i] == 1 || v1_values[i] == 1 && v2_values[i] == X) {
+			cout << "1 ";
+		}
+		else if (v1_values[i] == X && v2_values[i] == X) {
+			cout << X << " ";
+		}
+		else {
+			cout << "0 ";
+		}
+	}
+	cout << "\n";
+}
+
 //house::house() {
 //	address = "";
 //	fl_num = 0;
