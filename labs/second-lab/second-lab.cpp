@@ -19,6 +19,18 @@ int main() {
 		system("cls");
 		show_menu();
 		cin >> ch;
+		switch (ch)
+		{
+			case '1':
+				system("cls");
+				cout << a << b;
+				cout << "Press any key or q to leave.\n";
+				cin >> ch;
+				break;
+
+		default:
+			break;
+		}
 	}
 }
 

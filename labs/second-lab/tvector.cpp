@@ -102,6 +102,15 @@ void show_vectors_intersection(Tvector v1, Tvector v2) {
 	cout << "\n";
 }
 
+ostream& operator<<(ostream& os, const Tvector& vector) {
+	os << vector.name << " = { ";
+	for (int i = 0; i < vector_size; i++) {
+		os << vector.values[i] << " ";
+	}
+	os << "}\n";
+	return os;
+}
+
 void show_menu() {
 	cout << "Press:\n"; 
 	cout << "1 - to output all vectors;\n";

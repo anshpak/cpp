@@ -26,6 +26,7 @@ public:
 	string get_name();
 	void show_vector();
 	int get_X_amount();
+	friend ostream& operator<<(ostream& os, const Tvector& vector);
 };
 
 bool are_orthogonal(Tvector v1, Tvector v2);
