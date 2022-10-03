@@ -20,10 +20,12 @@ public:
 	Tvector();
 	void set_values();
 	void set_name(string name = "Unnamed vector");
-	//int* get_values();
+	void get_values(int arr_for_values_copy[]);
 	string get_name();
 	void show_vector();
 };
+
+bool are_orthogonal(Tvector v1, Tvector v2);
 
 //struct stage {
 //	int rooms_amount;

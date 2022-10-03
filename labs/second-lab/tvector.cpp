@@ -21,18 +21,21 @@ void Tvector::set_name(string name) {
 	this->name = name;
 }
 
-//int* Tvector::get_values() {
-//	int values_copy[vector_size];
-//	for (int i = 0; i < vector_size; i++) {
-//		cout << values[i] << "\n";
-//		values_copy[i] = values[i];
-//	}
-//	return values_copy;
-//}
+void Tvector::get_values(int arr_for_values_copy[]) {
+	for (int i = 0; i < vector_size; i++) {
+		arr_for_values_copy[i] = this->values[i];
+	}
+}
 
 string Tvector::get_name() {
 	return name;
 }
+
+//bool are_orthogonal(Tvector v1, Tvector v2) {
+//	for (int i = 0; i < vector_size; i++) {
+//		if (v1.)
+//	}
+//}
 
 void Tvector::show_vector() {
 	cout << name << " = { ";

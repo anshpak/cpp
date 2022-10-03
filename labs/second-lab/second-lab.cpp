@@ -6,13 +6,17 @@
 #include <string>
 
 int main() {
-	Tvector a;
+	Tvector a = Tvector();
 	a.show_vector();
-	/*int *temp_arr = a.get_values();
+
+	int temp_arr[vector_size];
+	a.get_values(temp_arr);
 	for (int i = 0; i < vector_size; i++) {
-		cout << *(temp_arr + i) << " ";
+		cout << temp_arr[i] << " ";
 	}
-	temp_arr[0] = 123;*/
+	temp_arr[0] = 123;
+	a.show_vector();
+
 }
 
 //int main()
