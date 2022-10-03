@@ -13,7 +13,8 @@ int main() {
 	bool check = are_orthogonal(a, b);
 	cout << std::boolalpha << check;
 	cout << "_________________\n";
-	cout << a.get_X_amount() << " " << b.get_X_amount();
+	check = are_equal(a, b);
+	cout << std::boolalpha << check;
 }
 
 //int main()

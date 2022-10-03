@@ -61,6 +61,18 @@ bool are_orthogonal(Tvector v1, Tvector v2) {
 	return true;
 }
 
+bool are_equal(Tvector v1, Tvector v2) {
+	int v1_values[vector_size], v2_values[vector_size];
+	v1.get_values(v1_values);
+	v2.get_values(v2_values);
+	for (int i = 0; i < vector_size; i++) {
+		if (v1_values[i] != v2_values[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
 //house::house() {
 //	address = "";
 //	fl_num = 0;

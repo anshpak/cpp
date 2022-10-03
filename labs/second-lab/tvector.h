@@ -27,6 +27,7 @@ public:
 };
 
 bool are_orthogonal(Tvector v1, Tvector v2);
+bool are_equal(Tvector v1, Tvector v2);
 
 //struct stage {
 //	int rooms_amount;

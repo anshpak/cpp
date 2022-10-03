@@ -1,3 +1,2 @@
-﻿  tvector.cpp
-D:\cpp-tasks\labs\second-lab\tvector.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+﻿  second-lab.cpp
   second-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\second-lab.exe
