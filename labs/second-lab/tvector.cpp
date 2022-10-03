@@ -111,6 +111,15 @@ bool operator==(const Tvector& left_vector, const Tvector& right_vector) {
 	return true;
 }
 
+bool operator*(const Tvector& left_vector, const Tvector& right_vector) {
+	for (int i = 0; i < vector_size; i++) {
+		if (left_vector.values[i] == 1 && right_vector.values[i] == 1 || left_vector.values[i] == X && right_vector.values[i] == X || left_vector.values[i] == X && right_vector.values[i] == 1 || left_vector.values[i] == 1 && right_vector.values[i] == X) {
+			return false;
+		}
+	}
+	return true;
+}
+
 ostream& operator<<(ostream& os, const Tvector& vector) {
 	os << vector.name << " = { ";
 	for (int i = 0; i < vector_size; i++) {

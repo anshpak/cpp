@@ -49,33 +49,33 @@ int main() {
 			for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
 				cout << i + 1 << ". " << vectors[i];
 			}
-			cout << "Press any key or q to leave.\n";
+			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
 			break;
 		}
 		case '2': {
 			system("cls");
 			cout << "Compare two random vectors: \n";
-			int j = rand() % 10;
-			int k = rand() % 10;
+			int j = rand() % ARR_OF_VECTORS_SIZE;
+			int k = rand() % ARR_OF_VECTORS_SIZE;
 			cout << "1. " << vectors[j];
 			cout << "2. " << vectors[k];
 			bool check = vectors[j] == vectors[k];
-			cout << "Are these two vectors equal?\n The answer is" << std::boolalpha << check << "\n";
-			cout << "Press any key or q to leave.\n";
+			cout << "Are these two vectors equal?\nThe answer is " << std::boolalpha << check << ".\n";
+			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
 			break;
 		}
 		case '3': {
 			system("cls");
 			cout << "Check if two random vectors are orthogonal: \n";
-			int j = rand() % 10;
-			int k = rand() % 10;
+			int j = rand() % ARR_OF_VECTORS_SIZE;
+			int k = rand() % ARR_OF_VECTORS_SIZE;
 			cout << "1. " << vectors[j];
 			cout << "2. " << vectors[k];
 			bool check = vectors[j] * vectors[k];
-			cout << "Are these two vectors orthogonal?\n The answer is" << std::boolalpha << check << "\n";
-			cout << "Press any key or q to leave.\n";
+			cout << "Are these two vectors orthogonal?\nThe answer is " << std::boolalpha << check << ".\n";
+			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
 			break;
 		}
