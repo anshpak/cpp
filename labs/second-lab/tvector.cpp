@@ -102,6 +102,15 @@ void show_vectors_intersection(Tvector v1, Tvector v2) {
 	cout << "\n";
 }
 
+bool operator==(const Tvector& left_vector, const Tvector& right_vector) {
+	for (int i = 0; i < vector_size; i++) {
+		if (left_vector.values[i] != right_vector.values[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
 ostream& operator<<(ostream& os, const Tvector& vector) {
 	os << vector.name << " = { ";
 	for (int i = 0; i < vector_size; i++) {
@@ -114,7 +123,7 @@ ostream& operator<<(ostream& os, const Tvector& vector) {
 void show_menu() {
 	cout << "Press:\n"; 
 	cout << "1 - to output all vectors;\n";
-
+	cout << "2 - compare two random vectors;\n";
 	cout << "q - to quit.\n";
 }
 

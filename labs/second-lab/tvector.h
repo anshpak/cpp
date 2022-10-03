@@ -26,6 +26,7 @@ public:
 	string get_name();
 	void show_vector();
 	int get_X_amount();
+	friend bool operator==(const Tvector& left_vector, const Tvector& right_vector);
 	friend ostream& operator<<(ostream& os, const Tvector& vector);
 };
 
