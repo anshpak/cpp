@@ -18,7 +18,9 @@ class Tvector {
 	string name;
 public:
 	Tvector();
-	void set_values();
+	Tvector(string name, int values[]);
+	void set_values(int values[]);
+	void set_random_values();
 	void set_name(string name = "Unnamed vector");
 	void get_values(int arr_for_values_copy[]);
 	string get_name();

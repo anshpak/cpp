@@ -6,9 +6,11 @@
 #include <string>
 
 int main() {
-	Tvector a;
+	int a_values[vector_size] = { 1, 0, 1, X, X };
+	int b_values[vector_size] = { 0, 0, X, 1, 1 };
+	Tvector a = Tvector("a", a_values);
+	Tvector b = Tvector("b", b_values);
 	a.show_vector();
-	Tvector b;
 	b.show_vector();
 	show_vectors_intersection(a, b);
 }

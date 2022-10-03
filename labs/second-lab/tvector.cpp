@@ -7,13 +7,24 @@ int tset[n] = { 0, 1, X };
 
 Tvector::Tvector() {
 	set_name();
-	set_values();
+	set_random_values();
 }
 
-void Tvector::set_values() {
+Tvector::Tvector(string name, int values[]) {
+	set_name(name);
+	set_values(values);
+}
+
+void Tvector::set_random_values() {
 	srand(time(NULL));
 	for (int i = 0; i < vector_size; i++) {
 		values[i] = tset[rand() % 3];
+	}
+}
+
+void Tvector::set_values(int values[]) {
+	for (int i = 0; i < vector_size; i++) {
+		this->values[i] = values[i];
 	}
 }
 
