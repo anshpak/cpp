@@ -12,6 +12,8 @@ int main() {
 	b.show_vector();
 	bool check = are_orthogonal(a, b);
 	cout << std::boolalpha << check;
+	cout << "_________________\n";
+	cout << a.get_X_amount() << " " << b.get_X_amount();
 }
 
 //int main()

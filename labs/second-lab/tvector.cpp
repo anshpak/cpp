@@ -39,6 +39,16 @@ void Tvector::show_vector() {
 	cout << "}\n";
 }
 
+int Tvector::get_X_amount() {
+	int count = 0;
+	for (int i = 0; i < vector_size; i++) {
+		if (values[i] == X) {
+			count++;
+		}
+	}
+	return count;
+}
+
 bool are_orthogonal(Tvector v1, Tvector v2) {
 	int v1_values[vector_size], v2_values[vector_size];
 	v1.get_values(v1_values);

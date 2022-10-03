@@ -23,6 +23,7 @@ public:
 	void get_values(int arr_for_values_copy[]);
 	string get_name();
 	void show_vector();
+	int get_X_amount();
 };
 
 bool are_orthogonal(Tvector v1, Tvector v2);
