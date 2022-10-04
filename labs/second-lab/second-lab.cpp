@@ -5,12 +5,12 @@
 #include <ctime>
 
 int main() {
-	srand(time(NULL));
+	//srand(time(NULL));
 	const int ARR_OF_VECTORS_SIZE = 10;
 	Tvector vectors[ARR_OF_VECTORS_SIZE];
 	
 	// to check how the random vectors work
-	/*for (int i = 0; i < N; i++) {
+	/*for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
 		vectors[i] = Tvector(to_string(i));
 	}*/
 

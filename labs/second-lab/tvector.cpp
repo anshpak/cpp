@@ -125,6 +125,14 @@ bool operator*(const Tvector& left_vector, const Tvector& right_vector) {
 	return true;
 }
 
+Tvector Tvector::operator=(const Tvector& vector) {
+	name = vector.name;
+	for (int i = 0; i < vector_size; i++) {
+		values[i] = vector.values[i];
+	}
+	return *this;
+}
+
 string operator/(const Tvector& left_vector, const Tvector& right_vector) {
 	string res = "{ ";
 	for (int i = 0; i < vector_size; i++) {
@@ -142,6 +150,8 @@ string operator/(const Tvector& left_vector, const Tvector& right_vector) {
 	res += "}\n";
 	return res;
 }
+
+
 
 ostream& operator<<(ostream& os, const Tvector& vector) {
 	os << vector.name << " = { ";
