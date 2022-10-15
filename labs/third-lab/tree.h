@@ -13,7 +13,7 @@ using namespace std;
 #endif
 
 struct node {
-	int n; // информационное поле узла дерева
+	int info; // информационное поле узла дерева
 	int count;
 	node* left, * right;
 };
