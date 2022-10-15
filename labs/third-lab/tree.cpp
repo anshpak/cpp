@@ -1,5 +1,4 @@
 #include "tree.h"
-#include <ctime>
 
 Tree::Tree() {
 	root = 0;
@@ -67,6 +66,44 @@ void Tree::push(node*& wer, int data) {
 		push(wer->right, data);
 	}
 	else {
-		count++;
+		wer->count++;
+	}
+}
+
+void Tree::show(node* wer) {
+	if (wer != 0) {
+		show(wer->left);
+		cout << "The num: " << wer->info << " - " << wer->count;
+		cout << " of elements" << endl;
+		show(wer->right);
+	}
+}
+
+node* Tree::find(node* wer, int key) {
+	if (wer == 0) {
+		return 0;
+	}
+	else if (key < wer->info) {
+		return find(wer->left, key);
+	}
+	else if (key > wer->info) {
+		return find(wer->right, key);
+	}
+	else {
+		return wer;
+	}
+}
+
+void Tree::print_leaves(node* wer) {
+	if (wer == 0) {
+		return;
+	}
+	else if ((wer->left == 0) && (wer->right == 0)) {
+		cout << "The num: " << wer->info << " - " << wer->count;
+		cout << " of elements" << endl;
+	}
+	else {
+		print_leaves(wer->left);
+		print_leaves(wer->right);
 	}
 }
