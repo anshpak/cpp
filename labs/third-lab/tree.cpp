@@ -1,7 +1,4 @@
 #include "tree.h"
-#include <iostream>
-#include <string>
-#include <stdlib.h>
 #include <ctime>
 
 Tree::Tree() {
@@ -55,3 +52,21 @@ void Tree::del_tree(node* wer) {
 	delete wer;
 }
 
+void Tree::push(node*& wer, int data) {
+	if (wer == 0) {
+		wer = new node;
+		wer->info = data;
+		wer->left = 0;
+		wer->right = 0;
+		wer->count = 1;
+	}
+	else if (data < wer->info) {
+		push(wer->left, data);
+	}
+	else if (data > wer->info) {
+		push(wer->right, data);
+	}
+	else {
+		count++;
+	}
+}
