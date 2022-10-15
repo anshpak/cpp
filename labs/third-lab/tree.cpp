@@ -31,3 +31,27 @@ void Tree::copy_tree(node*& root_new, node* root_old) {
 	}
 }
 
+Tree::Tree(const Tree& ob) {
+	if (ob.root == 0) {
+		root = 0;
+	}
+	else {
+		root = new node;
+		root->info = ob.root->info;
+		root->count = 1;
+		root->left = 0;
+		root->right = 0;
+		copy_tree(root, ob.root);
+	}
+}
+
+void Tree::del_tree(node* wer) {
+	if (wer->left != 0) {
+		del_tree(wer->left);
+	}
+	if (wer->right != 0) {
+		del_tree(wer->right);
+	}
+	delete wer;
+}
+
