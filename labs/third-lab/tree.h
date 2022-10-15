@@ -34,5 +34,4 @@ public:
 	void show(node* wer); // вывод дерева на экран
 	node* find(node* wer, int key); // поиск по ключу
 	void print_leaves(node* wer); // вывод листьев дерева на экран
-	node 
 };
