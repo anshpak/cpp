@@ -8,13 +8,13 @@ Tree::~Tree() {
 	del_tree(root);
 }
 
-Tree::Tree(int t) {
-	srand(time(NULL));
-	root = 0;
-	for (int i = 0; i < t; i++) {
-		push(root, rand() % 10 - 5);
-	}
-}
+//Tree::Tree(int t) {
+//	srand(time(NULL));
+//	root = 0;
+//	for (int i = 0; i < t; i++) {
+//		push(root, rand() % 10 - 5);
+//	}
+//}
 
 void Tree::copy_tree(node*& root_new, node* root_old) {
 	if (root_old->left != 0) {
@@ -54,7 +54,7 @@ void Tree::del_tree(node* vertex) {
 	delete vertex;
 }
 
-void Tree::push(node*& vertex, int data) {
+void Tree::push(node*& vertex, float data) {
 	if (vertex == 0) {
 		vertex = new node;
 		vertex->info = data;
@@ -81,7 +81,7 @@ void Tree::show(node* vertex) {
 	}
 }
 
-node* Tree::find(node* vertex, int key) {
+node* Tree::find(node* vertex, float key) {
 	if (vertex == 0) {
 		return 0;
 	}

@@ -1,5 +1,4 @@
 ﻿  third-lab.cpp
-D:\cpp-tasks\labs\third-lab\third-lab.cpp(69,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\cpp-tasks\labs\third-lab\third-lab.cpp(86,25): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\cpp-tasks\labs\third-lab\third-lab.cpp(87,36): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  tree.cpp
+  Создание кода...
   third-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\third-lab.exe

@@ -7,7 +7,7 @@ int main()
 	Tree tree;
 	ifstream f("data.dat");
 	if (f.is_open()) {
-		int temp;
+		float temp;
 		while (not f.eof()) {
 			f >> temp;
 			tree.push(tree.root, temp);
@@ -80,7 +80,18 @@ int main()
 		}
 		case '6': {
 			system("cls");
-			cout << "Enter the value: \n";
+			cout << "Enter the value to add: \n";
+			float tmp_value;
+			cin >> tmp_value;
+			tree.push(tree.root, tmp_value);
+			print_node(tree.find(tree.root, tmp_value));
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '7': {
+			system("cls");
+			cout << "Enter the value to delete: \n";
 			float tmp_value;
 			cin >> tmp_value;
 			tree.push(tree.root, tmp_value);
