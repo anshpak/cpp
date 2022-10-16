@@ -76,7 +76,7 @@ void Tree::push(node*& vertex, int data) {
 void Tree::show(node* vertex) {
 	if (vertex != 0) {
 		show(vertex->left);
-		cout << "Thó value: " << vertex->info << " - " << vertex->count;
+		cout << "The value: " << vertex->info << " - " << vertex->count;
 		cout << " pieces" << endl;
 		show(vertex->right);
 	}
@@ -109,4 +109,11 @@ void Tree::print_leaves(node* vertex) {
 		print_leaves(vertex->left);
 		print_leaves(vertex->right);
 	}
+}
+
+int Tree::get_height(node* vertex) {
+	if (vertex == 0) {
+		return 0;
+	}
+	return 1 + max(get_height(vertex->left), get_height(vertex->right));
 }

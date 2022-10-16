@@ -10,11 +10,14 @@ int main()
 		int temp;
 		while (not f.eof()) {
 			f >> temp;
-			cout << temp << " ";
+			tree.push(tree.root, temp);
 		}
 	}
 	else {
 		cout << "The file wasn't open.";
 	}
 	f.close();
+	tree.show(tree.root);
+	int height = tree.get_height(tree.root);
+	cout << height;
 }

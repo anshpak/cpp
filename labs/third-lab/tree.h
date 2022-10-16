@@ -11,7 +11,7 @@ using namespace std;
 */
 
 struct node {
-	int info; // информационное поле узла дерева
+	float info; // информационное поле узла дерева
 	int count;
 	node* left, * right;
 };
@@ -32,6 +32,7 @@ public:
 	void show(node* vertex); // вывод дерева на экран
 	node* find(node* vertex, int key); // поиск по ключу
 	void print_leaves(node* vertex); // вывод листьев дерева на экран
+	int get_height(node* vertex);
 };
 
 #endif
