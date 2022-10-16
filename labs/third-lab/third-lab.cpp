@@ -21,5 +21,6 @@ int main()
 	int height = tree.get_height(tree.root);
 	cout << height << "\n";
 	node tmp_node =  tree.get_max(tree.root);
-	cout << tmp_node.info << "\n";
+	cout << tmp_node.info << " "<< tmp_node.count << "\n";
+
 }
