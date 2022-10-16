@@ -41,69 +41,72 @@ Tree::Tree(const Tree& ob) {
 	}
 }
 
-void Tree::del_tree(node* wer) {
-	if (wer->left != 0) {
-		del_tree(wer->left);
+void Tree::del_tree(node* vertex) {
+	if (vertex == 0) {
+		return;
+	} // for empty trees
+	if (vertex->left != 0) {
+		del_tree(vertex->left);
 	}
-	if (wer->right != 0) {
-		del_tree(wer->right);
+	if (vertex->right != 0) {
+		del_tree(vertex->right);
 	}
-	delete wer;
+	delete vertex;
 }
 
-void Tree::push(node*& wer, int data) {
-	if (wer == 0) {
-		wer = new node;
-		wer->info = data;
-		wer->left = 0;
-		wer->right = 0;
-		wer->count = 1;
+void Tree::push(node*& vertex, int data) {
+	if (vertex == 0) {
+		vertex = new node;
+		vertex->info = data;
+		vertex->left = 0;
+		vertex->right = 0;
+		vertex->count = 1;
 	}
-	else if (data < wer->info) {
-		push(wer->left, data);
+	else if (data < vertex->info) {
+		push(vertex->left, data);
 	}
-	else if (data > wer->info) {
-		push(wer->right, data);
+	else if (data > vertex->info) {
+		push(vertex->right, data);
 	}
 	else {
-		wer->count++;
+		vertex->count++;
 	}
 }
 
-void Tree::show(node* wer) {
-	if (wer != 0) {
-		show(wer->left);
-		cout << "The num: " << wer->info << " - " << wer->count;
-		cout << " of elements" << endl;
-		show(wer->right);
+void Tree::show(node* vertex) {
+	if (vertex != 0) {
+		show(vertex->left);
+		cout << "Thó value: " << vertex->info << " - " << vertex->count;
+		cout << " pieces" << endl;
+		show(vertex->right);
 	}
 }
 
-node* Tree::find(node* wer, int key) {
-	if (wer == 0) {
+node* Tree::find(node* vertex, int key) {
+	if (vertex == 0) {
 		return 0;
 	}
-	else if (key < wer->info) {
-		return find(wer->left, key);
+	else if (key < vertex->info) {
+		return find(vertex->left, key);
 	}
-	else if (key > wer->info) {
-		return find(wer->right, key);
+	else if (key > vertex->info) {
+		return find(vertex->right, key);
 	}
 	else {
-		return wer;
+		return vertex;
 	}
 }
 
-void Tree::print_leaves(node* wer) {
-	if (wer == 0) {
+void Tree::print_leaves(node* vertex) {
+	if (vertex == 0) {
 		return;
 	}
-	else if ((wer->left == 0) && (wer->right == 0)) {
-		cout << "The num: " << wer->info << " - " << wer->count;
-		cout << " of elements" << endl;
+	else if ((vertex->left == 0) && (vertex->right == 0)) {
+		cout << "The value: " << vertex->info << " - " << vertex->count;
+		cout << " pieces" << endl;
 	}
 	else {
-		print_leaves(wer->left);
-		print_leaves(wer->right);
+		print_leaves(vertex->left);
+		print_leaves(vertex->right);
 	}
 }
