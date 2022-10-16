@@ -33,7 +33,9 @@ public:
 	node* find(node* vertex, int key); // поиск по ключу
 	void print_leaves(node* vertex); // вывод листьев дерева на экран
 	int get_height(node* vertex);
-	node get_max(node* vertex);
+	node* get_max(node* vertex);
 };
 
+void print_node(node* vertex);
+void show_menu();
 #endif

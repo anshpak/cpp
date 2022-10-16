@@ -76,8 +76,7 @@ void Tree::push(node*& vertex, int data) {
 void Tree::show(node* vertex) {
 	if (vertex != 0) {
 		show(vertex->left);
-		cout << "The value: " << vertex->info << " - " << vertex->count;
-		cout << " pieces" << endl;
+		print_node(vertex);
 		show(vertex->right);
 	}
 }
@@ -102,8 +101,7 @@ void Tree::print_leaves(node* vertex) {
 		return;
 	}
 	else if ((vertex->left == 0) && (vertex->right == 0)) {
-		cout << "The value: " << vertex->info << " - " << vertex->count;
-		cout << " pieces" << endl;
+		print_node(vertex);
 	}
 	else {
 		print_leaves(vertex->left);
@@ -118,11 +116,27 @@ int Tree::get_height(node* vertex) {
 	return 1 + max(get_height(vertex->left), get_height(vertex->right));
 }
 
-node Tree::get_max(node* vertex) {
+node* Tree::get_max(node* vertex) {
 	if (vertex->right == 0) {
-		return *vertex;
+		return vertex;
 	}
 	else {
 		return get_max(vertex->right);
 	}
+}
+
+void print_node(node* vertex) {
+	cout << "The value: " << vertex->info << " - " << vertex->count;
+	cout << " pieces" << endl;
+}
+
+void show_menu() {
+	cout << "Press:\n";
+	cout << "1 - to show tree lcr;\n";
+	cout << "2 - to find max node;\n";
+	cout << "3 - to get tree height;\n";
+	cout << "4 - to print leaves;\n";
+	cout << "5 - to find node\n";
+	cout << "6 - to add node\n";
+	cout << "q - to quit.\n";
 }
