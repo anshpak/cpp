@@ -1,6 +1,2 @@
-﻿  tree.cpp
-D:\cpp-tasks\labs\third-lab\tree.cpp(12,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\cpp-tasks\labs\third-lab\tree.cpp(21,34): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\cpp-tasks\labs\third-lab\tree.cpp(25,35): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\cpp-tasks\labs\third-lab\tree.cpp(60,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+﻿  third-lab.cpp
   third-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\third-lab.exe

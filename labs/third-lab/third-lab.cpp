@@ -19,5 +19,7 @@ int main()
 	f.close();
 	tree.show(tree.root);
 	int height = tree.get_height(tree.root);
-	cout << height;
+	cout << height << "\n";
+	node tmp_node =  tree.get_max(tree.root);
+	cout << tmp_node.info << "\n";
 }

@@ -18,8 +18,8 @@ Tree::Tree(int t) {
 
 void Tree::copy_tree(node*& root_new, node* root_old) {
 	if (root_old->left != 0) {
-		push(root_new, (root_old->left)->info);
-		copy_tree(root_new, root_old->left);
+push(root_new, (root_old->left)->info);
+copy_tree(root_new, root_old->left);
 	}
 	if (root_old->right != 0) {
 		push(root_new, (root_old->right)->info);
@@ -116,4 +116,13 @@ int Tree::get_height(node* vertex) {
 		return 0;
 	}
 	return 1 + max(get_height(vertex->left), get_height(vertex->right));
+}
+
+node Tree::get_max(node* vertex) {
+	if (vertex->right == 0) {
+		return *vertex;
+	}
+	else {
+		return get_max(vertex->right);
+	}
 }
