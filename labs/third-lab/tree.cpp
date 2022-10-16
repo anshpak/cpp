@@ -1,4 +1,5 @@
 #include "tree.h"
+#include <fstream>
 
 Tree::Tree() {
 	root = 0;

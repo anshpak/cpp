@@ -17,11 +17,6 @@ int main()
 		cout << "The file wasn't open.";
 	}
 	f.close();
-	/*tree.show(tree.root);
-	int height = tree.get_height(tree.root);
-	cout << height << "\n";
-	node tmp_node =  tree.get_max(tree.root);
-	cout << tmp_node.info << " "<< tmp_node.count << "\n";*/
 	char ch = NULL;
 	while (ch != 'q') {
 		system("cls");
@@ -81,17 +76,6 @@ int main()
 		case '6': {
 			system("cls");
 			cout << "Enter the value to add: \n";
-			float tmp_value;
-			cin >> tmp_value;
-			tree.push(tree.root, tmp_value);
-			print_node(tree.find(tree.root, tmp_value));
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
-			break;
-		}
-		case '7': {
-			system("cls");
-			cout << "Enter the value to delete: \n";
 			float tmp_value;
 			cin >> tmp_value;
 			tree.push(tree.root, tmp_value);
