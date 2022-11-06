@@ -18,10 +18,11 @@ struct node {
 };
 
 template <class my_type> class Tree {
-public:
+private:
 	node* root;
+public:
 	Tree();
-	//Tree(int t); // формирование дерева из t случайных чисел
+	node* get_root();
 	void copy_tree(node*& root_new, node* root_old);
 	/*  опирует дерево с корнем root_old в дерево с корнем root_new. ¬ результате деревь€ наход€тс€
 	в различных участках пам€ти */
@@ -35,9 +36,8 @@ public:
 	void print_leaves(node* vertex); // вывод листьев дерева на экран
 	int get_height(node* vertex);
 	node* get_max(node* vertex);
+	void print_node(node* vertex);
 };
 
-template <class my_type>
-void print_node(node<my_type>* vertex);
 void show_menu();
 #endif

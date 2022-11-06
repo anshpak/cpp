@@ -11,6 +11,11 @@ Tree<my_type>::~Tree() {
 	del_tree(root);
 }
 
+template <class my_type>
+node<my_type>* Tree<my_type>::get_root() {
+	return root;
+}
+
 template<class my_type>
 void Tree<my_type>::copy_tree(node<my_type>*& root_new, node<my_type>* root_old) {
 	if (root_old->left != 0) {
@@ -130,7 +135,7 @@ node<my_type>* Tree<my_type>::get_max(node<my_type>* vertex) {
 }
 
 template <class my_type>
-void print_node(node<my_type>* vertex) {
+void Tree<my_type>::print_node(node<my_type>* vertex) {
 	cout << "The value: " << vertex->info << " - " << vertex->count;
 	cout << " pieces" << endl;
 }
