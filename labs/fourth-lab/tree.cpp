@@ -1,50 +1,18 @@
-#include "tree.h"
 #include <fstream>
 
-template <class my_type>
-Tree<my_type>::Tree() {
+template <class my_type> Tree<my_type>::Tree() {
 	root = 0;
 }
 
-template <class my_type>
-Tree<my_type>::~Tree() {
+template <class my_type> Tree<my_type>::~Tree() {
 	del_tree(root);
 }
 
-template <class my_type>
-node<my_type>* Tree<my_type>::get_root() {
+template <class my_type> node<my_type>* Tree<my_type>::get_root() {
 	return root;
 }
 
-template<class my_type>
-void Tree<my_type>::copy_tree(node<my_type>*& root_new, node<my_type>* root_old) {
-	if (root_old->left != 0) {
-		push(root_new, (root_old->left)->info);
-		copy_tree(root_new, root_old->left);
-	}
-	if (root_old->right != 0) {
-		push(root_new, (root_old->right)->info);
-		copy_tree(root_new, root_old->right);
-	}
-}
-
-template <class my_type>
-Tree<my_type>::Tree(const Tree& ob) {
-	if (ob.root == 0) {
-		root = 0;
-	}
-	else {
-		root = new node;
-		root->info = ob.root->info;
-		root->count = 1;
-		root->left = 0;
-		root->right = 0;
-		copy_tree(root, ob.root);
-	}
-}
-
-template <class my_type>
-void Tree<my_type>::del_tree(node<my_type>* vertex) {
+template <class my_type> void Tree<my_type>::del_tree(node<my_type>* vertex) {
 	if (vertex == 0) {
 		return;
 	} // for empty trees
@@ -57,10 +25,9 @@ void Tree<my_type>::del_tree(node<my_type>* vertex) {
 	delete vertex;
 }
 
-template <class my_type>
-void Tree<my_type>::push(node<my_type>*& vertex, my_type data) {
+template <class my_type> void Tree<my_type>::push(node<my_type>*& vertex, float data) {
 	if (vertex == 0) {
-		vertex = new node;
+		vertex = new node<my_type>;
 		vertex->info = data;
 		vertex->left = 0;
 		vertex->right = 0;
@@ -77,8 +44,7 @@ void Tree<my_type>::push(node<my_type>*& vertex, my_type data) {
 	}
 }
 
-template <class my_type>
-void Tree<my_type>::show(node<my_type>* vertex) {
+template <class my_type> void Tree<my_type>::show(node<my_type>* vertex) {
 	if (vertex != 0) {
 		show(vertex->left);
 		print_node(vertex);
@@ -86,8 +52,7 @@ void Tree<my_type>::show(node<my_type>* vertex) {
 	}
 }
 
-template <class my_type>
-node<my_type>* Tree<my_type>::find(node<my_type>* vertex, my_type key) {
+template <class my_type> node<my_type>* Tree<my_type>::find(node<my_type>* vertex, float key) {
 	if (vertex == 0) {
 		return 0;
 	}
@@ -102,8 +67,7 @@ node<my_type>* Tree<my_type>::find(node<my_type>* vertex, my_type key) {
 	}
 }
 
-template <class my_type>
-void Tree<my_type>::print_leaves(node<my_type>* vertex) {
+template <class my_type> void Tree<my_type>::print_leaves(node<my_type>* vertex) {
 	if (vertex == 0) {
 		return;
 	}
@@ -116,16 +80,14 @@ void Tree<my_type>::print_leaves(node<my_type>* vertex) {
 	}
 }
 
-template <class my_type>
-int Tree<my_type>::get_height(node<my_type>* vertex) {
+template <class my_type> int Tree<my_type>::get_height(node<my_type>* vertex) {
 	if (vertex == 0) {
 		return 0;
 	}
 	return 1 + max(get_height(vertex->left), get_height(vertex->right));
 }
 
-template <class my_type>
-node<my_type>* Tree<my_type>::get_max(node<my_type>* vertex) {
+template <class my_type> node<my_type>* Tree<my_type>::get_max(node<my_type>* vertex) {
 	if (vertex->right == 0) {
 		return vertex;
 	}
@@ -134,8 +96,7 @@ node<my_type>* Tree<my_type>::get_max(node<my_type>* vertex) {
 	}
 }
 
-template <class my_type>
-void Tree<my_type>::print_node(node<my_type>* vertex) {
+template <class my_type> void print_node(node<my_type>* vertex) {
 	cout << "The value: " << vertex->info << " - " << vertex->count;
 	cout << " pieces" << endl;
 }

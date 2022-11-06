@@ -36,7 +36,7 @@ int main()
 		case '2': {
 			system("cls");
 			cout << "The max node is:\n";
-			tree.print_node(tree.get_max(root));
+			print_node(tree.get_max(root));
 			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
 			break;
@@ -68,7 +68,7 @@ int main()
 			}
 			else {
 				cout << "Your node is:\n";
-				tree.print_node(max_vertex);
+				print_node(max_vertex);
 			}
 			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
@@ -80,12 +80,11 @@ int main()
 			float tmp_value;
 			cin >> tmp_value;
 			tree.push(root, tmp_value);
-			tree.print_node(tree.find(root, tmp_value));
+			print_node(tree.find(root, tmp_value));
 			cout << "Press any key to back to the menu or q to leave.\n";
 			cin >> ch;
 			break;
 		}
-
 		default:
 			break;
 		}
