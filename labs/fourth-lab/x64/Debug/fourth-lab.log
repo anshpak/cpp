@@ -1,1 +1,60 @@
-﻿  fourth-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\fourth-lab.exe
+﻿  fourth-lab.cpp
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(22,22): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+D:\cpp-tasks\labs\fourth-lab\tree.h(71,18): warning C4244: =: преобразование "float" в "my_type", возможна потеря данных
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(68): message : во время компиляции функции-члена класс шаблон "void Tree<int>::push(node<my_type> *&,float)"
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(22): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Tree<int>::push(node<my_type> *&,float)"
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(15): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Tree<int>"
+D:\cpp-tasks\labs\fourth-lab\tree.h(200,49): warning C4244: аргумент: преобразование "my_type" в "float", возможна потеря данных
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(155): message : во время компиляции функции-члена класс шаблон "void Tree<int>::work_with_types(node<my_type> *)"
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(29): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Tree<int>::work_with_types(node<my_type> *)"
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(217,21): warning C4244: аргумент: преобразование "my_type" в "float", возможна потеря данных
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(218,32): warning C4244: аргумент: преобразование "my_type" в "float", возможна потеря данных
+          with
+          [
+              my_type=int
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(71,18): warning C4244: =: преобразование "float" в "my_type", возможна потеря данных
+          with
+          [
+              my_type=char
+          ]
+D:\cpp-tasks\labs\fourth-lab\tree.h(68): message : во время компиляции функции-члена класс шаблон "void Tree<char>::push(node<my_type> *&,float)"
+          with
+          [
+              my_type=char
+          ]
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(58): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Tree<char>::push(node<my_type> *&,float)"
+          with
+          [
+              my_type=char
+          ]
+D:\cpp-tasks\labs\fourth-lab\fourth-lab.cpp(51): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Tree<char>"
+  fourth-lab.vcxproj -> D:\cpp-tasks\labs\x64\Debug\fourth-lab.exe

@@ -4,89 +4,68 @@
 
 int main()
 {
-	Tree<float> tree;
-	node<float>* root = tree.get_root();
-	ifstream f("data.dat");
-	if (f.is_open()) {
-		float temp;
-		while (not f.eof()) {
-			f >> temp;
-			tree.push(root, temp);
-		}
-	}
-	else {
-		cout << "The file wasn't open.";
-	}
-	f.close();
-	char ch = NULL;
-	while (ch != 'q') {
-		system("cls");
-		show_menu();
-		cin >> ch;
-		switch (ch)
-		{
-		case '1': {
-			system("cls");
-			cout << "Tree\n";
-			tree.show(root);
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
-			break;
-		}
-		case '2': {
-			system("cls");
-			cout << "The max node is:\n";
-			print_node(tree.get_max(root));
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
-			break;
-		}
-		case '3': {
-			system("cls");
-			cout << "Tree height is: \n";
-			cout << tree.get_height(root) << "\n";
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
-			break;
-		}
-		case '4': {
-			system("cls");
-			cout << "Tree leaves:\n";
-			tree.print_leaves(root);
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
-			break;
-		}
-		case '5': {
-			system("cls");
-			cout << "Enter the value: \n";
-			float tmp_key;
-			cin >> tmp_key;
-			node<float>* max_vertex = tree.find(root, tmp_key);
-			if (max_vertex == 0) {
-				cout << "There is no node with such value.\n";
+	int choice;
+	cout << "Choose type of data" << endl;
+	cout << "1 - int" << endl;
+	cout << "2 - float" << endl;
+	cout << "3 - char" << endl;
+	cin >> choice;
+	switch(choice) {
+		case 1: {
+			Tree<int> tree;
+			node<int>* root = tree.get_root();
+			ifstream f("int.dat");
+			if (f.is_open()) {
+				int temp;
+				while (not f.eof()) {
+					f >> temp;
+					tree.push(root, temp);
+				}
 			}
 			else {
-				cout << "Your node is:\n";
-				print_node(max_vertex);
+				cout << "The file wasn't open.";
 			}
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
+			f.close();
+			tree.work_with_types(root);
 			break;
 		}
-		case '6': {
-			system("cls");
-			cout << "Enter the value to add: \n";
-			float tmp_value;
-			cin >> tmp_value;
-			tree.push(root, tmp_value);
-			print_node(tree.find(root, tmp_value));
-			cout << "Press any key to back to the menu or q to leave.\n";
-			cin >> ch;
+		case 2: {
+			Tree<float> tree;
+			node<float>* root = tree.get_root();
+			ifstream f("float.dat");
+			if (f.is_open()) {
+				float temp;
+				while (not f.eof()) {
+					f >> temp;
+					tree.push(root, temp);
+				}
+			}
+			else {
+				cout << "The file wasn't open.";
+			}
+			f.close();
+			tree.work_with_types(root);
+			break;
+		}
+		case 3: {
+			Tree<char> tree;
+			node<char>* root = tree.get_root();
+			ifstream f("char.dat");
+			if (f.is_open()) {
+				char temp;
+				while (not f.eof()) {
+					f >> temp;
+					tree.push(root, temp);
+				}
+			}
+			else {
+				cout << "The file wasn't open.";
+			}
+			f.close();
+			tree.work_with_types(root);
 			break;
 		}
 		default:
 			break;
-		}
 	}
 }

@@ -34,6 +34,7 @@ public:
 	void print_leaves(node<my_type>* vertex); // вывод листьев дерева на экран
 	int get_height(node<my_type>* vertex);
 	node<my_type>* get_max(node<my_type>* vertex);
+	void work_with_types(node<my_type>* root);
 };
 
 template <class my_type> void print_node(node<my_type>* vertex);
@@ -149,6 +150,80 @@ void show_menu() {
 	cout << "5 - to find node\n";
 	cout << "6 - to add node\n";
 	cout << "q - to quit.\n";
+}
+
+template <class my_type> void Tree<my_type>::work_with_types(node<my_type>* root) {
+	char ch = NULL;
+	while (ch != 'q') {
+		system("cls");
+		show_menu();
+		cin >> ch;
+		switch (ch)
+		{
+		case '1': {
+			system("cls");
+			cout << "Tree\n";
+			this->show(root);
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '2': {
+			system("cls");
+			cout << "The max node is:\n";
+			print_node(this->get_max(root));
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '3': {
+			system("cls");
+			cout << "Tree height is: \n";
+			cout << this->get_height(root) << "\n";
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '4': {
+			system("cls");
+			cout << "Tree leaves:\n";
+			this->print_leaves(root);
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '5': {
+			system("cls");
+			cout << "Enter the value: \n";
+			my_type tmp_key;
+			cin >> tmp_key;
+			node<my_type>* max_vertex = this->find(root, tmp_key);
+			if (max_vertex == 0) {
+				cout << "There is no node with such value.\n";
+			}
+			else {
+				cout << "Your node is:\n";
+				print_node(max_vertex);
+			}
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		case '6': {
+			system("cls");
+			cout << "Enter the value to add: \n";
+			my_type tmp_value;
+			cin >> tmp_value;
+			this->push(root, tmp_value);
+			print_node(this->find(root, tmp_value));
+			cout << "Press any key to back to the menu or q to leave.\n";
+			cin >> ch;
+			break;
+		}
+		default:
+			break;
+		}
+	}
 }
 
 #endif
