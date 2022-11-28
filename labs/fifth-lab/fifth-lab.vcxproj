@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="annotation.cpp" />
     <ClCompile Include="fifth-lab.cpp" />
+    <ClCompile Include="text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="annotation.h" />
+    <ClInclude Include="text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

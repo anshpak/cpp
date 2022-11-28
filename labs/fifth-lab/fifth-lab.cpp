@@ -1,20 +1,32 @@
-﻿// fifth-lab.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "text.h"
+#include <fstream>
 #include <iostream>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	ifstream f("star-wars.txt");
+	string text;
+	if (f.is_open()) {
+		string temp;
+		while (not f.eof()) {
+			f >> temp;
+			text += temp + " ";
+		}
+	}
+	else {
+		cout << "The file wasn't open.";
+	}
+	f.close();
+
+	Text star_wars;
+	star_wars.set_language("English");
+	star_wars.set_text(text);
+	cout << "The lang is: " << star_wars.get_language() << endl;
+	cout << "The text is: " << endl << star_wars.get_text() << endl;
+	star_wars.vanish_text();
+	cout << "The text after vanishing: " << endl << star_wars.get_text() << endl;
+	star_wars.set_text("The text is about Star Wars movie!");
+	cout << "The new text: " << endl << star_wars.get_text() << endl;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
