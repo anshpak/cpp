@@ -87,3 +87,14 @@ void Article::edit_authors_age(int age) {
 	this->ltm = localtime(&now);
 	ed_time = to_string(this->ltm->tm_mday) + "." + to_string(this->ltm->tm_mon + 1) + " " + to_string(this->ltm->tm_hour) + ":" + to_string(this->ltm->tm_min) + ":" + to_string(this->ltm->tm_sec);
 }
+
+void show_what_to_edit() {
+	cout << "Enter what to edit:" << endl;
+	cout << "1 - Article name." << endl;
+	cout << "2 - Rating." << endl;
+	cout << "3 - Theme." << endl;
+	cout << "4 - Text." << endl;
+	cout << "5 - Language." << endl;
+	cout << "6 - Authors name." << endl;
+	cout << "7 - Authors age." << endl;
+}

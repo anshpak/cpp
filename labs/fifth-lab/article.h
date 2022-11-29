@@ -26,4 +26,6 @@ public:
 	void info() override;
 };
 
+void show_what_to_edit();
+
 #endif

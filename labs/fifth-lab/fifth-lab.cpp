@@ -8,34 +8,11 @@ using namespace std;
 
 int main()
 {
-
-	/*
-	// for Text class testing
-	Text star_wars;
-	star_wars.set_language("English");
-	star_wars.set_text(text);
-	cout << "The lang is: " << star_wars.get_language() << endl;
-	cout << "The text is: " << endl << star_wars.get_text() << endl;
-	star_wars.vanish_text();
-	cout << "The text after vanishing: " << endl << star_wars.get_text() << endl;
-	star_wars.set_text("The text is about Star Wars movie!");
-	cout << "The new text: " << endl << star_wars.get_text() << endl;*/
-
-	// for Annotation class testing
-	/*Annotation star_wars("Star Wars", "movie", text, "English", "Andrey Shpak", 21);
-	star_wars.info();*/
-
-	// for Article class testing
-	/*Article star_wars("Star Wars", 7, "movie", text, "English", "Andrey Shpak", 21);
-	star_wars.info();*/
-	/*Tree<Article> tree;
-	node<Article>* root = tree.get_root();
-	tree.push(root, star_wars);*/
 	const int N = 3;
 	Article articles[N];
 	articles[0] = Article("Star Wars", 7, "movie", "The caption of a movie", "English", "Andrey Shpak", 21);
-	articles[1] = Article("Flowers", 12, "gardening", "Flowers of your garden", "French", "Alexandr Tomin", 21);
-	articles[2] = Article("Birds of Europe", 30, "animals", "Rare animals of the whole Europe", "German", "Natalia Sim", 21);
+	articles[1] = Article("Flowers", 12, "gardening", "Flowers of your garden", "French", "Alexandr Tomin", 51);
+	articles[2] = Article("Birds of Europe", 30, "animals", "Rare animals of the whole Europe", "German", "Natalia Sim", 33);
 
 	char ch = NULL;
 	while (ch != 'q') {
@@ -53,9 +30,8 @@ int main()
 		{
 		case '1': {
 			system("cls");
-			
+			show_what_to_edit();
 			char ch_temp;
-			cout << "Enter what to edit:" << endl;
 			cin >> ch_temp;
 			switch (ch_temp) {
 			case '1': {
@@ -70,31 +46,31 @@ int main()
 				articles[0].edit_rating(temp);
 				break;
 			}
-			case 3: {
+			case '3': {
 				string temp;
 				cin >> temp;
 				articles[0].edit_theme(temp);
 				break;
 			}
-			case 4: {
+			case '4': {
 				string temp;
 				cin >> temp;
 				articles[0].edit_text(temp);
 				break;
 			}
-			case 5: {
+			case '5': {
 				string temp;
 				cin >> temp;
 				articles[0].edit_language(temp);
 				break;
 			}
-			case 6: {
+			case '6': {
 				string temp;
 				cin >> temp;
 				articles[0].edit_author(temp);
 				break;
 			}
-			case 7: {
+			case '7': {
 				int temp;
 				cin >> temp;
 				articles[0].edit_authors_age(temp);
@@ -108,7 +84,7 @@ int main()
 		}
 		case '2': {
 			system("cls");
-			
+			show_what_to_edit();
 			char ch_temp;
 			cout << "Enter what to edit:" << endl;
 			cin >> ch_temp;
@@ -119,37 +95,37 @@ int main()
 				articles[1].edit_name(temp);
 				break;
 			}
-			case'2': {
+			case '2': {
 				float temp;
 				cin >> temp;
 				articles[1].edit_rating(temp);
 				break;
 			}
-			case 3: {
+			case '3': {
 				string temp;
 				cin >> temp;
 				articles[1].edit_theme(temp);
 				break;
 			}
-			case 4: {
+			case '4': {
 				string temp;
 				cin >> temp;
 				articles[1].edit_text(temp);
 				break;
 			}
-			case 5: {
+			case '5': {
 				string temp;
 				cin >> temp;
 				articles[1].edit_language(temp);
 				break;
 			}
-			case 6: {
+			case '6': {
 				string temp;
 				cin >> temp;
 				articles[1].edit_author(temp);
 				break;
 			}
-			case 7: {
+			case '7': {
 				int temp;
 				cin >> temp;
 				articles[1].edit_authors_age(temp);
@@ -163,7 +139,7 @@ int main()
 		}
 		case '3': {
 			system("cls");
-			
+			show_what_to_edit();
 			char ch_temp;
 			cout << "Enter what to edit:" << endl;
 			cin >> ch_temp;
@@ -174,37 +150,37 @@ int main()
 				articles[2].edit_name(temp);
 				break;
 			}
-			case'2': {
+			case '2': {
 				float temp;
 				cin >> temp;
 				articles[2].edit_rating(temp);
 				break;
 			}
-			case 3: {
+			case '3': {
 				string temp;
 				cin >> temp;
 				articles[2].edit_theme(temp);
 				break;
 			}
-			case 4: {
+			case '4': {
 				string temp;
 				cin >> temp;
 				articles[2].edit_text(temp);
 				break;
 			}
-			case 5: {
+			case '5': {
 				string temp;
 				cin >> temp;
 				articles[2].edit_language(temp);
 				break;
 			}
-			case 6: {
+			case '6': {
 				string temp;
 				cin >> temp;
 				articles[2].edit_author(temp);
 				break;
 			}
-			case 7: {
+			case '7': {
 				int temp;
 				cin >> temp;
 				articles[2].edit_authors_age(temp);
@@ -220,23 +196,4 @@ int main()
 			break;
 		}
 	}
-
-	/*ifstream f("articles.txt");
-	string text;
-	if (f.is_open()) {
-		string temp_name;
-		string temp_rating;
-		string temp_text;
-		string temp_theme;
-		string temp_language;
-		string temp_name;
-		string temp_age;
-		while (not f.eof()) {
-			
-		}
-	}
-	else {
-		cout << "The file wasn't open.";
-	}
-	f.close();*/
 }
