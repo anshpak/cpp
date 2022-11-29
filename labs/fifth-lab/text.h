@@ -13,8 +13,8 @@ public:
 	void set_language(string language);
 	string get_text();
 	string get_language();
-	void vanish_text();
-	void info();
+	void virtual vanish_text();
+	void virtual info();
 };
 
 #endif

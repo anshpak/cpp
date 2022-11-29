@@ -2,6 +2,10 @@
 #include <iostream>
 #include <string>
 
+Annotation::Annotation() {
+
+}
+
 Annotation::Annotation(string name, string theme, string text, string language, string author, int age) {
 	this->set_name(name);
 	this->set_theme(theme);
@@ -45,7 +49,6 @@ int Annotation::get_authors_age() {
 
 void Annotation::vanish_text() {
 	this->set_text("");
-	// Also could be done through protected
 }
 
 void Annotation::info() {

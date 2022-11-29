@@ -12,6 +12,7 @@ class Annotation : public Text {
 	string author;
 	int authors_age;
 public:
+	Annotation();
 	Annotation(string name, string theme, string text, string language, string author, int age);
 	void set_name(string name);
 	void set_theme(string theme);
@@ -21,8 +22,8 @@ public:
 	string get_theme();
 	string get_author();
 	int get_authors_age();
-	void vanish_text();
-	void info();
+	void vanish_text() override;
+	void virtual info() override;
 };
 
 #endif

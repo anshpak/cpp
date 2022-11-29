@@ -136,6 +136,7 @@
     <ClInclude Include="annotation.h" />
     <ClInclude Include="article.h" />
     <ClInclude Include="text.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
