@@ -35,10 +35,5 @@ int main()
 
 	// for Annotation class testing
 	Annotation star_wars("Star Wars", "movie", text, "English", "Andrey Shpak", 21);
-	cout << "The lang is: " << star_wars.get_language() << endl;
-	cout << "The text is: " << endl << star_wars.get_text() << endl;
-	star_wars.vanish_text();
-	cout << "The text after vanishing: " << endl << star_wars.get_text() << endl;
-	star_wars.set_text("The text is about Star Wars movie!");
-	cout << "The new text: " << endl << star_wars.get_text() << endl;
+	star_wars.info();
 }

@@ -14,6 +14,7 @@ public:
 	string get_text();
 	string get_language();
 	void vanish_text();
+	void info();
 };
 
 #endif

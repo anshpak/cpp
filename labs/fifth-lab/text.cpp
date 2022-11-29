@@ -23,3 +23,8 @@ string Text::get_language() {
 void Text::vanish_text() {
 	this->text = "";
 }
+
+void Text::info() {
+	cout << "The article language is" << this->get_language() << "." << endl;
+	cout << this->get_text() << endl;
+}

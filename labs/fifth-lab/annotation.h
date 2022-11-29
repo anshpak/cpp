@@ -22,6 +22,7 @@ public:
 	string get_author();
 	int get_authors_age();
 	void vanish_text();
+	void info();
 };
 
 #endif
