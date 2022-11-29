@@ -12,6 +12,7 @@ class Annotation : public Text {
 	string author;
 	int authors_age;
 public:
+	Annotation(string name, string theme, string text, string language, string author, int age);
 	void set_name(string name);
 	void set_theme(string theme);
 	void set_author(string author);

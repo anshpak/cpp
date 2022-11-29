@@ -2,6 +2,15 @@
 #include <iostream>
 #include <string>
 
+Annotation::Annotation(string name, string theme, string text, string language, string author, int age) {
+	this->set_name(name);
+	this->set_theme(theme);
+	this->set_text(text);
+	this->set_language(language);
+	this->set_author(author);
+	this->set_authors_age(age);
+}
+
 void Annotation::set_name(string name) {
 	this->name = name;
 }
