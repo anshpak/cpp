@@ -1,5 +1,4 @@
 ﻿#include "article.h"
-#include "tree.h"
 #include <fstream>
 #include <iostream>
 #include <ctime>
