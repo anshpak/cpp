@@ -1,7 +1,7 @@
-﻿// #include "text.h"
-# include "annotation.h"
+﻿#include "article.h"
 #include <fstream>
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -34,6 +34,10 @@ int main()
 	cout << "The new text: " << endl << star_wars.get_text() << endl;*/
 
 	// for Annotation class testing
-	Annotation star_wars("Star Wars", "movie", text, "English", "Andrey Shpak", 21);
+	/*Annotation star_wars("Star Wars", "movie", text, "English", "Andrey Shpak", 21);
+	star_wars.info();*/
+
+	// for Article class testing
+	Article star_wars("Star Wars", 7, "movie", text, "English", "Andrey Shpak", 21);
 	star_wars.info();
 }

@@ -49,8 +49,8 @@ void Annotation::vanish_text() {
 }
 
 void Annotation::info() {
-	cout << this->name << "." << endl;
-	cout << "The theme of the article: " << this->theme << " in " << this->get_language() << " language." << endl;
+	cout << this->get_name() << "." << endl;
+	cout << "The theme of the article: " << this->get_theme() << " in " << this->get_language() << " language." << endl;
 	cout << this->get_text() << endl;
 	cout << "By " << this->get_author() << ", " << this->get_authors_age() << " years old." << endl;
 }

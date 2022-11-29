@@ -24,12 +24,18 @@
     <ClCompile Include="text.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="article.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="annotation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="article.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
