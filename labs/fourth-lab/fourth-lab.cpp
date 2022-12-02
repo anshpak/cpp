@@ -14,19 +14,31 @@ int main()
 		case 1: {
 			Tree<int> tree;
 			node<int>* root = tree.get_root();
-			ifstream f("int.dat");
-			if (f.is_open()) {
-				int temp;
-				while (not f.eof()) {
-					f >> temp;
-					tree.push(root, temp);
-				}
+			ifstream f;
+			/*Специфика работы с файлами: по умолчанию в классе ifstream
+			отключена обработка исключительных ситуаций
+			Для того, чтобы включить обработку исключительных ситуаций*/
+			f.exceptions(ifstream::badbit | ifstream::failbit);
+			try
+			{
+				f.open("int.dat");
 			}
-			else {
-				cout << "The file wasn't open.";
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
 			}
+
+			int temp;
+			while (not f.eof()) {
+				f >> temp;
+				tree.push(root, temp);
+			}
+
 			f.close();
 			tree.work_with_types(root);
+
 			break;
 		}
 		case 2: {
