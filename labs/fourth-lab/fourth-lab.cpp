@@ -26,17 +26,48 @@ int main()
 			catch (const ifstream::failure& ex)
 			{
 				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
 				cout << ex.what() << endl;
 				cout << ex.code() << endl;
+				char temp;
+				break;
 			}
 
 			int temp;
-			while (not f.eof()) {
-				f >> temp;
-				tree.push(root, temp);
+
+			try
+			{
+				while (not f.eof()) {
+					f >> temp;
+					tree.push(root, temp);
+				}
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Warning. Empty file reading" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
 			}
 
 			f.close();
+			//try
+			//{
+			//	f.close();
+			//}
+			//catch (const ifstream::failure& ex)
+			//{
+			//	// класс exception именно для ошибок ifstream
+			//	cout << ex.what() << endl;
+			//	cout << ex.code() << endl;
+			//	char temp;
+			//	cout << "Press any key." << endl;
+			//	cin >> temp;
+			//}
+			
 			tree.work_with_types(root);
 
 			break;
