@@ -3,11 +3,14 @@
 #include <string>
 #include <stdlib.h>
 #include <ctime>
+#include <fstream>
 
 int main() {
 	//srand(time(NULL));
 	const int ARR_OF_VECTORS_SIZE = 10;
 	Tvector vectors[ARR_OF_VECTORS_SIZE];
+	int data[ARR_OF_VECTORS_SIZE][vector_size];
+	string names[ARR_OF_VECTORS_SIZE];
 	
 	// to check how the random vectors work
 	/*for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
@@ -15,26 +18,26 @@ int main() {
 	}*/
 
 	// direct input
-	int a_values[vector_size] = { X, 0, 1, 0, X };
-	int b_values[vector_size] = { 0, 0, X, 1, 1 };
-	int c_values[vector_size] = { 1, 0, 1, 0, 1};
-	int d_values[vector_size] = { X, 0, 1, 0, X };
-	int my_vector_values[vector_size] = { 0, 0, X, X, X };
-	int i_values[vector_size] = { 0, 0, 1, X, 1 };
-	int j_values[vector_size] = { 1, 0, 0, 0, 0 };
-	int k_values[vector_size] = { X, 0, 1, 0, X };
-	int e_values[vector_size] = { 1, 1, X, 0, 1 };
-	int f_values[vector_size] = { X, 0, 1, 0, X };
-	vectors[0] = Tvector("A", a_values);
-	vectors[1] = Tvector("B", b_values);
-	vectors[2] = Tvector("C", c_values);
-	vectors[3] = Tvector("D", d_values);
-	vectors[4] = Tvector("V", my_vector_values);
-	vectors[5] = Tvector("i", i_values);
-	vectors[6] = Tvector("j", j_values);
-	vectors[7] = Tvector("k", k_values);
-	vectors[8] = Tvector("E", e_values);
-	vectors[9] = Tvector("F", f_values);
+	ifstream f;
+	int temp;
+	f.open("data.dat");
+	for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
+		for (int j = 0; j < vector_size; j++) {
+			f >> data[i][j];
+		}
+	}
+	f.close();
+
+	f.open("names.dat");
+	for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
+		f >> names[i];
+	}
+	f.close();
+	
+	for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
+		vectors[i] = Tvector("temp", data[i]);
+		vectors[i].set_name(names[i]);
+	}
 	
 	char ch = NULL;
 	while (ch != 'q') {
@@ -108,4 +111,17 @@ int main() {
 			break;
 		}
 	}
+	ofstream fil;
+	fil.open("res.txt");
+	for (int i = 0; i < ARR_OF_VECTORS_SIZE; i++) {
+		fil << vectors[i].get_name() << "\t";
+		fil << "{ ";
+		int tmp_val[vector_size];
+		vectors[i].get_values(tmp_val);
+		for (int j = 0; j < vector_size; j++) {
+			fil << tmp_val[j] << " ";
+		}
+		fil << "}" << endl;
+	}
+	fil.close();
 }
