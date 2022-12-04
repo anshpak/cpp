@@ -78,7 +78,24 @@ int main()
 			f.close();
 			
 			tree.work_with_types(root);
-
+			ofstream fil;
+			try
+			{
+				fil.open("res.txt");;
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
+				break;
+			}
+			tree.write_to_file(root, fil);
+			fil.close();
 			break;
 		}
 		case 2: {
@@ -146,7 +163,24 @@ int main()
 			f.close();
 
 			tree.work_with_types(root);
-			
+			ofstream fil;
+			try
+			{
+				fil.open("res.txt");;
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
+				break;
+			}
+			tree.write_to_file(root, fil);
+			fil.close();
 			break;
 		}
 		case 3: {
@@ -157,7 +191,7 @@ int main()
 			f.exceptions(ifstream::badbit | ifstream::failbit);
 			try
 			{
-				f.open("empty.dat");
+				f.open("char.dat");
 			}
 			catch (const ifstream::failure& ex)
 			{
@@ -207,6 +241,24 @@ int main()
 				f.close();
 			}
 			tree.work_with_types(root);
+			ofstream fil;
+			try
+			{
+				fil.open("res.txt");;
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
+				break;
+			}
+			tree.write_to_file(root, fil);
+			fil.close();
 			break;
 		}
 		default:

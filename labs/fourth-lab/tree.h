@@ -21,10 +21,6 @@ template <class my_type> class Tree {
 public:
 	Tree();
 	node<my_type>* get_root();
-	void copy_tree(node<my_type>*& root_new, node<my_type>* root_old);
-	/*  опирует дерево с корнем root_old в дерево с корнем root_new. ¬ результате деревь€ наход€тс€
-	в различных участках пам€ти */
-	Tree(const Tree& ob); // конструктор копировани€
 	void del_tree(node<my_type>* vertex);
 	/* рекурсивна€ функци€, используема€ в деструкторе(освобождение пам€ти) */
 	~Tree();
@@ -35,6 +31,7 @@ public:
 	int get_height(node<my_type>* vertex);
 	node<my_type>* get_max(node<my_type>* vertex);
 	void work_with_types(node<my_type>* root);
+	void write_to_file(node<my_type>* vertex, ofstream& f);
 };
 
 template <class my_type> void print_node(node<my_type>* vertex);
@@ -232,6 +229,14 @@ template <class my_type> void Tree<my_type>::work_with_types(node<my_type>* root
 		default:
 			break;
 		}
+	}
+}
+
+template <class my_type> void Tree<my_type>::write_to_file(node<my_type>* vertex, ofstream& f) {
+	if (vertex != 0) {
+		write_to_file(vertex->left, f);
+		f << vertex->info << endl;
+		write_to_file(vertex->right, f);
 	}
 }
 
