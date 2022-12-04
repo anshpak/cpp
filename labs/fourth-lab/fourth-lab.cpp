@@ -29,7 +29,6 @@ int main()
 				cout << "Error. File do not exist" << endl;
 				cout << ex.what() << endl;
 				cout << ex.code() << endl;
-				char temp;
 				break;
 			}
 
@@ -85,36 +84,128 @@ int main()
 		case 2: {
 			Tree<float> tree;
 			node<float>* root = tree.get_root();
-			ifstream f("float.dat");
-			if (f.is_open()) {
-				float temp;
-				while (not f.eof()) {
-					f >> temp;
-					tree.push(root, temp);
+			ifstream f;
+
+			f.exceptions(ifstream::badbit | ifstream::failbit);
+			try
+			{
+				f.open("float.dat");
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				break;
+			}
+
+			try
+			{
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size == 0) {
+					throw exception();
 				}
 			}
-			else {
-				cout << "The file wasn't open.";
+			catch (const std::exception& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Warning. Empty file reading" << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
 			}
+
+			float temp;
+
+			try
+			{
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size != 0) {
+					while (not f.eof()) {
+						f >> temp;
+						tree.push(root, temp);
+					}
+				}
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. Type missmatch" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				break;
+			}
+
 			f.close();
+
 			tree.work_with_types(root);
+			
 			break;
 		}
 		case 3: {
 			Tree<char> tree;
 			node<char>* root = tree.get_root();
-			ifstream f("char.dat");
-			if (f.is_open()) {
-				char temp;
-				while (not f.eof()) {
-					f >> temp;
-					tree.push(root, temp);
+			ifstream f;
+
+			f.exceptions(ifstream::badbit | ifstream::failbit);
+			try
+			{
+				f.open("empty.dat");
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. File do not exist" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				break;
+			}
+
+			try
+			{
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size == 0) {
+					throw exception();
 				}
 			}
-			else {
-				cout << "The file wasn't open.";
+			catch (const std::exception& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Warning. Empty file reading" << endl;
+				char temp;
+				cout << "Press any key" << endl;
+				cin >> temp;
 			}
-			f.close();
+
+			char temp;
+
+			try
+			{
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size != 0) {
+					while (not f.eof()) {
+						f >> temp;
+						tree.push(root, temp);
+					}
+				}
+			}
+			catch (const ifstream::failure& ex)
+			{
+				f.close();
+			}
 			tree.work_with_types(root);
 			break;
 		}
