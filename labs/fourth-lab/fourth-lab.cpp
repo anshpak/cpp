@@ -21,7 +21,7 @@ int main()
 			f.exceptions(ifstream::badbit | ifstream::failbit);
 			try
 			{
-				f.open("empty.dat");
+				f.open("int.dat");
 			}
 			catch (const ifstream::failure& ex)
 			{

@@ -67,11 +67,20 @@ template <class my_type> void Tree<my_type>::del_tree(node<my_type>* vertex) {
 
 template <class my_type> void Tree<my_type>::push(node<my_type>*& vertex, float data) {
 	if (vertex == 0) {
-		vertex = new node<my_type>;
-		vertex->info = data;
-		vertex->left = 0;
-		vertex->right = 0;
-		vertex->count = 1;
+		try
+		{
+			vertex = new node<my_type>;
+			if (!vertex) throw exception();
+			vertex->info = data;
+			vertex->left = 0;
+			vertex->right = 0;
+			vertex->count = 1;
+		}
+		catch (const std::exception& ex)
+		{
+			cout << "No memory" << endl;
+			return;
+		}
 	}
 	else if (data < vertex->info) {
 		push(vertex->left, data);
