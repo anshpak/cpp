@@ -21,7 +21,7 @@ int main()
 			f.exceptions(ifstream::badbit | ifstream::failbit);
 			try
 			{
-				f.open("int.dat");
+				f.open("empty.dat");
 			}
 			catch (const ifstream::failure& ex)
 			{
@@ -33,40 +33,50 @@ int main()
 				break;
 			}
 
-			int temp;
-
 			try
 			{
-				while (not f.eof()) {
-					f >> temp;
-					tree.push(root, temp);
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size == 0) {
+					throw exception();
 				}
 			}
-			catch (const ifstream::failure& ex)
+			catch (const std::exception& ex)
 			{
 				// класс exception именно для ошибок ifstream
 				cout << "Warning. Empty file reading" << endl;
-				cout << ex.what() << endl;
-				cout << ex.code() << endl;
 				char temp;
 				cout << "Press any key" << endl;
 				cin >> temp;
 			}
 
+			int temp;
+
+			try
+			{
+				int size;
+				f.seekg(0, std::ios::end);
+				size = f.tellg();
+				f.seekg(0, std::ios::beg);
+				if (size != 0) {
+					while (not f.eof()) {
+						f >> temp;
+						tree.push(root, temp);
+					}
+				}
+			}
+			catch (const ifstream::failure& ex)
+			{
+				// класс exception именно для ошибок ifstream
+				cout << "Error. Type missmatch" << endl;
+				cout << ex.what() << endl;
+				cout << ex.code() << endl;
+				break;
+			}
+
 			f.close();
-			//try
-			//{
-			//	f.close();
-			//}
-			//catch (const ifstream::failure& ex)
-			//{
-			//	// класс exception именно для ошибок ifstream
-			//	cout << ex.what() << endl;
-			//	cout << ex.code() << endl;
-			//	char temp;
-			//	cout << "Press any key." << endl;
-			//	cin >> temp;
-			//}
 			
 			tree.work_with_types(root);
 
