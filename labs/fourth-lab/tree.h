@@ -30,7 +30,7 @@ public:
 	void print_leaves(node<my_type>* vertex); // вывод листьев дерева на экран
 	int get_height(node<my_type>* vertex);
 	node<my_type>* get_max(node<my_type>* vertex);
-	void work_with_types(node<my_type>* root);
+	void work_with_types(node<my_type>*& root);
 	void write_to_file(node<my_type>* vertex, ofstream& f);
 };
 
@@ -158,7 +158,7 @@ void show_menu() {
 	cout << "q - to quit.\n";
 }
 
-template <class my_type> void Tree<my_type>::work_with_types(node<my_type>* root) {
+template <class my_type> void Tree<my_type>::work_with_types(node<my_type>*& root) {
 	char ch = NULL;
 	while (ch != 'q') {
 		system("cls");
